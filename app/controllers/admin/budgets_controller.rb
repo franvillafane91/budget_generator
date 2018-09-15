@@ -7,6 +7,7 @@ module Admin
     def new
       @budget = Budget.new
       @budget.build_client
+      @budget.build_project
     end
 
     def create
@@ -47,12 +48,16 @@ module Admin
     private
     def budget_params
       params.require(:budget).permit(:send_date, :total_amount, :estimated_time,
-                      client_attributes: client_params
-                      )
+                      client_attributes: client_params,
+                      project_attributes: project_params )
     end
 
     def client_params
       [:name, :email]
+    end
+
+    def project_params
+      [:name, :description]
     end
   end
 end

@@ -9,6 +9,7 @@
       <thead>
         <tr>
           <th><strong>Cliente</strong></th>
+          <th><strong>Proyecto</strong></th>
           <th><strong>Total</strong></th>
           <th><strong>Acciones</strong></th>
         </tr>
@@ -18,6 +19,7 @@
         <% @budgets.each do |budget| %>
           <tr>
             <td><%= budget.client_name %></td>
+            <td><%= budget.project_name %></td>
             <td><%= budget.total_amount %></td>
             <td><%= link_to 'Editar', edit_admin_budget_path(budget) %> |
             <%= link_to 'Eliminar', admin_budget_path(budget), method: :delete, data: { confirm: 'Estás seguro?' } %></td>
@@ -31,6 +33,4 @@
   <% end %>
 
   <br>
-
-  <%= link_to 'Nuevo', new_admin_budget_path %>
 </div>
