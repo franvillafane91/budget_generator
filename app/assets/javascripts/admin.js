@@ -16,4 +16,5 @@
 //= require admin_template/jquery.vectormaps/jquery-jvectormap-1.2.2.min
 //= require admin_template/jquery.vectormaps/maps/jquery-jvectormap-world-mill-en
 //= require admin_template/behaviour/dashboard
+//= require cocoon
 //= require rails-ujs
