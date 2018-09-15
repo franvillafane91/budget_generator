@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <%= stylesheet_link_tag wicked_pdf_asset_base64("admin") %>
+    <%= wicked_pdf_javascript_include_tag "admin" %>
+  </head>
+  <body>
+    <div id="content">
+      <%= yield %>
+    </div>
+  </body>
+</html>

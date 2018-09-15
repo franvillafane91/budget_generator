@@ -1,0 +1,43 @@
+<div class="col-md-12">
+  <div class="row">
+    <div class="header">
+      <p id="notice"><%= notice %></p>
+      <h3 class="header text-center col-md-offset-4">Presupuestos</h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 text-justify">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque excepturi, aut modi et, delectus eligendi aliquid dolores harum consequuntur voluptatem. Alias vitae error voluptates doloribus nemo numquam repudiandae, soluta, provident.</p>
+    </div>
+    <div class="col-md-6 text-justify">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos soluta adipisci debitis corrupti ex vel unde, sequi inventore ducimus eaque magnam tempore, temporibus exercitationem quo autem distinctio quibusdam consequatur consectetur?</p>
+    </div>
+  </div>
+</div>
+<%= @budget.client_name %>
+<br>
+<%= @budget.project_name %>
+
+<br>
+
+<% if @budget.budget_items.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th><strong>Funcionalidad</strong></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @budget.budget_items.each do |item| %>
+        <tr>
+          <td><%= item.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+  <p>No hay presupuestos</p>
+<% end %>

@@ -11,6 +11,8 @@ gem 'rails', '~> 5.2'
 # Backend
 gem 'pg'
 gem 'puma', '~> 3.7'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 # Frontend
 gem 'sass-rails', '~> 5.0'

@@ -21,7 +21,8 @@
             <td><%= budget.client_name %></td>
             <td><%= budget.project_name %></td>
             <td><%= budget.total_amount %></td>
-            <td><%= link_to 'Editar', edit_admin_budget_path(budget) %> |
+            <td> <%= link_to "PDF", admin_budget_pdf_path(budget, format: :pdf) %> |
+            <%= link_to 'Editar', edit_admin_budget_path(budget) %> |
             <%= link_to 'Eliminar', admin_budget_path(budget), method: :delete, data: { confirm: 'Estás seguro?' } %></td>
           </tr>
         <% end %>
