@@ -1,0 +1,41 @@
+<div class="cl-sidebar">
+  <div class="cl-toggle">
+    <i class="fa fa-bars"></i>
+  </div>
+  <div class="cl-navblock">
+    <div class="menu-space">
+      <div class="content">
+        <%= link_to root_path do %>
+          <div class="sidebar-logo">
+            <div class="logo">
+            </div>
+          </div>
+        <% end %>
+        <div class="side-user">
+          <div class="info">
+            <p>
+              <i class="fa fa-user"></i>
+              Menú
+            </p>
+          </div>
+        </div>
+        <ul class="cl-vnavigation">
+          <li>
+            <a href="#">
+              <i class="fa fa-folder"></i>
+              <span>Presupuestos</span>
+            </a>
+            <ul class="sub-menu">
+              <li class="active">
+                <%= link_to "Listado", admin_budgets_path %>
+              </li>
+              <li>
+                <%= link_to "Nuevo", new_admin_budget_path %>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

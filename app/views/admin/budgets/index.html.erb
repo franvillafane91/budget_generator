@@ -1,0 +1,34 @@
+<div class="header">
+  <p id="notice"><%= notice %></p>
+  <h3>Presupuestos</h3>
+</div>
+
+<div class="content overflow-hidden mb20">
+  <% if @budgets.any? %>
+    <table>
+      <thead>
+        <tr>
+          <th><strong>Total</strong></th>
+          <th><strong>Acciones</strong></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @budgets.each do |budget| %>
+          <tr>
+            <td><%= budget.total_amount %></td>
+            <td><%= link_to 'Editar', edit_admin_budget_path(budget) %> |
+            <%= link_to 'Eliminar', admin_budget_path(budget), method: :delete, data: { confirm: 'Estás seguro?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  <% else %>
+    <p>No hay presupuestos</p>
+  <% end %>
+
+  <br>
+
+  <%= link_to 'Nuevo', new_admin_budget_path %>
+</div>
