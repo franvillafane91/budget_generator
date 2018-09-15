@@ -6,19 +6,19 @@ default: &default
 development:
   <<: *default
   host: localhost
-  database: base_cms_development
+  database: doc_generator_development
   username: <%= ENV['PG_USERNAME'] %>
   password: <%= ENV['PG_PASSWORD'] %>
 
 test:
   <<: *default
   host: localhost
-  database: base_cms_test
+  database: doc_generator_test
   username: <%= ENV['PG_USERNAME'] %>
   password: <%= ENV['PG_PASSWORD'] %>
 
 production:
   <<: *default
-  database: base_cms_production
+  database: doc_generator_production
   username: <%= ENV['PG_USERNAME'] %>
   password: <%= ENV['PG_PASSWORD'] %>

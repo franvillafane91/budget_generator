@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Rails
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2'
 
 # Backend
 gem 'pg'
