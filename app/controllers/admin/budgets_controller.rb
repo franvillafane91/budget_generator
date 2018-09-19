@@ -49,6 +49,7 @@ module Admin
     private
     def budget_params
       params.require(:budget).permit(:send_date, :total_amount, :estimated_time,
+                      :developer_id,
                       client_attributes: client_params,
                       project_attributes: project_params,
                       budget_items_attributes: budget_items_params )
@@ -63,7 +64,7 @@ module Admin
     end
 
     def budget_items_params
-      [:id, :description, :_destroy]
+      [:id, :title, :description, :_destroy]
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_15_041625) do
+ActiveRecord::Schema.define(version: 2018_09_19_003413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_09_15_041625) do
     t.bigint "budget_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
     t.index ["budget_id"], name: "index_budget_items_on_budget_id"
   end
 
@@ -29,6 +30,8 @@ ActiveRecord::Schema.define(version: 2018_09_15_041625) do
     t.string "estimated_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "developer_id"
+    t.index ["developer_id"], name: "index_budgets_on_developer_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -38,6 +41,13 @@ ActiveRecord::Schema.define(version: 2018_09_15_041625) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["budget_id"], name: "index_clients_on_budget_id"
+  end
+
+  create_table "developers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "projects", force: :cascade do |t|
@@ -50,6 +60,7 @@ ActiveRecord::Schema.define(version: 2018_09_15_041625) do
   end
 
   add_foreign_key "budget_items", "budgets"
+  add_foreign_key "budgets", "developers"
   add_foreign_key "clients", "budgets"
   add_foreign_key "projects", "budgets"
 end
