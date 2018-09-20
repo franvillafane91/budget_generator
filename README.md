@@ -1,9 +1,9 @@
-# Basic CMS
+# WaveLabs Management
 
-- Bundle install
-- Set of your database
-- Set your environments
+- `bundle install`
+- `rails db:create, db:migrate, db:seed`
+- Fill in env variables in `application.yml` (use `application.yml.sample` as a guide)
 - Run `rails s`
 
 # Template
-[Documentation of template](https://www.dropbox.com/s/507tqspy0pvd6f7/products-WB004G996.zip?dl=0)
+[Template Docs](https://www.dropbox.com/s/507tqspy0pvd6f7/products-WB004G996.zip?dl=0)
