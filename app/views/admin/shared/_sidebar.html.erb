@@ -26,11 +26,25 @@
               <span>Presupuestos</span>
             </a>
             <ul class="sub-menu">
-              <li class="active">
+              <li>
                 <%= link_to "Listado", admin_budgets_path %>
               </li>
               <li>
                 <%= link_to "Nuevo", new_admin_budget_path %>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-folder"></i>
+              <span>Desarrolladores</span>
+            </a>
+            <ul class="sub-menu">
+              <li>
+                <%= link_to "Listado", admin_developers_path %>
+              </li>
+              <li>
+                <%= link_to "Nuevo", new_admin_developer_path %>
               </li>
             </ul>
           </li>
