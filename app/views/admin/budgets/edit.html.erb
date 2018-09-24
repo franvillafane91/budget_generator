@@ -1,8 +1,7 @@
-<div class="header">
-  <p id="notice"><%= notice %></p>
-  <h3>Modificar Presupuesto</h3>
-  <h4 class="text-danger">Todos los campos son requeridos</h4>
-</div>
+<%= render 'admin/shared/simple_header',
+            notice: notice,
+            title: 'Modificar Presupuesto',
+            text_danger: 'Todos los campos son requeridos' %>
 
 <div class="content overflow-hidden mb20">
   <%= render 'form', budget: @budget %>

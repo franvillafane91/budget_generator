@@ -1,7 +1,4 @@
-<div class="header">
-  <p id="notice"><%= notice %></p>
-  <h3>Desarrolladores</h3>
-</div>
+<%= render 'admin/shared/simple_header', notice: notice, title: 'Desarrolladores', text_danger: '' %>
 
 <div class="content overflow-hidden mb20">
   <% if @developers.any? %>
@@ -25,10 +22,8 @@
         <% end %>
       </tbody>
     </table>
-
   <% else %>
     <p>No hay desarrolladores</p>
   <% end %>
-
   <br>
 </div>

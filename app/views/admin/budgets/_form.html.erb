@@ -4,9 +4,9 @@
       <h2><%= pluralize(budget.errors.count, "error") %> prohibited this budget from being saved:</h2>
 
       <ul>
-      <% budget.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% budget.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -59,7 +59,7 @@
 
     <div class="form-group col-md-6">
       <%= form.label :team_leader %>
-      <%= select("budget", "developer_id", Developer.all.collect {|d| [ d.name, d.id ] }, { include_blank: true }) %>
+      <%= form.select :developer_id, Developer.all.collect {|d| [ d.name, d.id ] }, { include_blank: '--Seleccionar--' }, class: 'form-control' %>
     </div>
   </div>
 

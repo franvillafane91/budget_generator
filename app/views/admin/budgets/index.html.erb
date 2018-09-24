@@ -1,7 +1,4 @@
-<div class="header">
-  <p id="notice"><%= notice %></p>
-  <h3>Presupuestos</h3>
-</div>
+<%= render 'admin/shared/simple_header', notice: notice, title: 'Presupuestos', text_danger: '' %>
 
 <div class="content overflow-hidden mb20">
   <% if @budgets.any? %>
@@ -28,10 +25,8 @@
         <% end %>
       </tbody>
     </table>
-
   <% else %>
     <p>No hay presupuestos</p>
   <% end %>
-
   <br>
 </div>
