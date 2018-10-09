@@ -1,111 +1,23 @@
 <div class="col-xs-12">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="header">
-        <h1>
-          Presupuesto
-          <br>
-          <small>Dirigido a: <%= @budget.client_name %></small>
-        </h1>
-      </div>
-    </div>
-  </div>
+  <%= render 'header', client_name: @budget.client_name %>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <h3 class="text-primary">Descripción del Sistema</h3>
-      <p><%= @budget.project_description %></p>
-    </div>
-  </div>
+  <%= render 'project_description', project_description: @budget.project_description %>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <h3 class="text-primary">Funcionalidades</h3>
-      <% if @budget.budget_items.any? %>
-        <table class="table table-striped">
-          <thead class="bg-primary">
-            <tr>
-              <th><strong>Funcionalidad</strong></th>
-              <th><strong>Descripción</strong></th>
-            </tr>
-          </thead>
+  <%= render 'payment_info', total_amount: @budget.total_amount %>
 
-          <tbody>
-            <% @budget.budget_items.each do |item| %>
-              <tr>
-                <td><%= item.title %></td>
-                <td><%= item.description? ? item.description : '-' %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+  <%= render 'deadlines_and_payment_forms', estimated_time: @budget.estimated_time %>
 
-      <% else %>
-        <p>No hay funcionalidades</p>
-      <% end %>
-      <p class="text-center"><small>
-        *WaveLabs no percibe ninguno de estos ingresos, todos los montos son pagos a terceros. WaveLabs sólo se limita a ayudar al cliente con la configuración y puesta en marcha de estos servicios, sin cobro alguno. Por más info, contactar al equipo de WaveLabs.
-      </small></p>
-    </div>
-  </div>
+  <%= render 'budget_items_table', budget_items: @budget.budget_items %>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <h3 class="text-primary">Plazos y Forma de Entrega</h3>
-      <p>
-        El tiempo estimado para el desarrollo del proyecto es de <strong><%= @budget.estimated_time %></strong>.
-      </p>
-      <p>
-        El cliente recibirá avances semanales sobre su proyecto. Durante esas reuniones semanales también se informará sobre los próximos avances y cualquier corrección necesaria, y se realizarán las consultas que surjan durante el desarrollo.
-      </p>
-      <p>
-        Si el cliente encuentra nuevas funcionalidades que quiera agregar, se pueden agregar al final de la cola de tareas a hacer, o reemplazar por otras que el cliente no quiera (siempre y cuando WaveLabs considere que tienen el mismo costo en cuanto a dinero y tiempos de entrega).
-      </p>
-    </div>
-  </div>
+  <%= render 'other_services_pricing_table' %>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <h3 class="text-primary">Retribución</h3>
-      <p><strong>Precio final: $<%= @budget.total_amount %></strong></p>
-      <p>Adelanto de 30%: $<%= @budget.total_amount * 0.3 %></p>
-      <p>Saldo a cancelar: $<%= @budget.total_amount * 0.7 %></p>
-      <p>Aclaraciones:<br>
-      El cliente puede elegir cancelar el saldo cuando se entregue el sitio o en 2 cuotas: la primera a mediados del desarrollo y la segunda al finalizar el mismo.<br>
-      Este presupuesto tiene una validez de 30 días.<br>
-      El desarrollo del sistema comienza a partir del pago del adelanto del 30%.<br>
-      El precio es sólo para lo detallado en <span class="text-primary">Funcionalidades</span>. Una vez recibida la confirmación, por parte del cliente, se inicia el desarrollo de la propuesta. Cualquier funcionalidad extra no listada debe agregarse a este presupuesto o realizar uno nuevo.
-      </p>
-    </div>
-  </div>
+  <%= render 'contact_info', dev_name: @budget.developer_name, dev_email: @budget.developer_email %>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <h3 class="text-primary">Datos de Contacto</h3>
-      <p>
-        Las conversaciones, consultas, entregas, etc., las tendrá con el líder de este equipo (el que tendrá a cargo su proyecto), que será <%= @budget.developer_name %> (<%= @budget.developer_email %>).
-      </p>
-    </div>
-  </div>
+  <% if @budget.show_missing_info_clarification? %>
+    <%= render 'missing_info_clarification' %>
+  <% end %>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <h3 class="text-primary">Palabras Finales</h3>
-      <p>
-        Este presupuesto no es cerrado. Es decir, se puede modificar tanto como el cliente lo necesite. Nuestra metodología de trabajo nos permite que nuestros productos de software sean escalables y crezcan tanto como el cliente lo requiera, por lo que en el futuro existe la posibilidad de seguir agregando beneficios a la aplicación web.
-      </p>
-      <p>
-        Cualquier duda que tenga sobre esta propuesta de trabajo, tanto sobre los servicios a contratar, las funcionalidades, quitar o extender el alcance de las mismas, la metodología de entregas, etc., no dude en contactarse con nosotros. Es muy importante despejar la mayor cantidad de dudas (ambas partes) antes de comenzar con el proceso de desarrollo.
-      </p>
-      <p>
-        Esperamos su respuesta.
-      </p>
-      <p>
-        Atte: El equipo de WaveLabs
-      </p>
-      <p>
-        Gracias.
-      </p>
-    </div>
-  </div>
+  <%= render 'ads_disclaimer' %>
+
+  <%= render 'farewell' %>
 </div>
