@@ -3,7 +3,7 @@
 
   <%= render 'project_description', project_description: @budget.project_description %>
 
-  <%= render 'payment_info', total_amount: @budget.total_amount %>
+  <%= render 'payment_info', budget: @budget %>
 
   <%= render 'deadlines_and_payment_forms', estimated_time: @budget.estimated_time %>
 

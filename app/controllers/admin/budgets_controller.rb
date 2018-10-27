@@ -8,6 +8,7 @@ module Admin
       @budget = Budget.new
       @budget.build_client
       @budget.build_project
+      @budget.build_hour_rate
       @budget.budget_items.build
     end
 
@@ -49,10 +50,11 @@ module Admin
     private
     def budget_params
       params.require(:budget).permit(:send_date, :total_amount, :estimated_time,
-                      :developer_id, :show_missing_info_clarification,
+                      :developer_id, :show_missing_info_clarification, :bonification,
                       client_attributes: client_params,
                       project_attributes: project_params,
-                      budget_items_attributes: budget_items_params )
+                      budget_items_attributes: budget_items_params,
+                      hour_rate_attributes: hour_rate_params )
     end
 
     def client_params
@@ -65,6 +67,10 @@ module Admin
 
     def budget_items_params
       [:id, :title, :description, :_destroy]
+    end
+
+    def hour_rate_params
+      [:in_pesos, :in_dolars]
     end
   end
 end

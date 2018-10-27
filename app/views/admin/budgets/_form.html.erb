@@ -64,6 +64,25 @@
   </div>
 
   <div class="row">
+    <%= form.fields_for :hour_rate do |hr| %>
+      <div class="form-group col-md-6">
+        <%= hr.label :hour_rate_in_pesos %>
+        <%= hr.number_field :in_pesos, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-6">
+        <%= hr.label :hour_rate_in_dolars %>
+        <%= hr.number_field :in_dolars, class: 'form-control' %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= form.label :bonification %>
+      <%= form.number_field :bonification, class: 'form-control' %>
+    </div>
+
     <div class="form-group col-md-6">
       <%= form.label :show_missing_info_clarification %>
       <%= form.check_box :show_missing_info_clarification, class: 'form-control' %>

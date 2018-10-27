@@ -1,9 +1,24 @@
+<% estimated_amount = budget.total_amount %>
+<% if budget.bonification %>
+  <% bonification = budget.bonification %>
+  <% final_amount = estimated_amount - bonification %>
+  <% adelanto = final_amount * 0.3 %>
+  <% saldo = final_amount * 0.7 %>
+<% else %>
+  <% adelanto = estimated_amount * 0.3 %>
+  <% saldo = estimated_amount * 0.7 %>
+<% end %>
+
 <div class="row">
   <div class="col-xs-12">
     <h3 class="text-primary">Retribución</h3>
-    <p><strong>Precio estimado: $<%= total_amount %></strong></p>
-    <p>Adelanto de 30%: $<%= total_amount * 0.3 %></p>
-    <p>Saldo a cancelar: $<%= total_amount * 0.7 %></p>
+    <p><strong>Precio estimado: $<%= estimated_amount %></strong></p>
+    <% if bonification %>
+      <p>Incluimos una <strong>Bonificacion de $<%= bonification %></strong></p>
+      <p><strong>Precio con Bonificacion: $<%= final_amount %></strong></p>
+    <% end %>
+    <p>Adelanto de 30%: $<%= adelanto %></p>
+    <p>Saldo a cancelar: $<%= saldo %></p>
     <p>Aclaraciones:<br>
     El cliente puede elegir cancelar el saldo cuando se entregue el sitio o en 2 cuotas: la primera a mediados del desarrollo y la segunda al finalizar el mismo.<br>
     Este presupuesto tiene una validez de 30 días.<br>

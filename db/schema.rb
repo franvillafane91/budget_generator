@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_09_074116) do
+ActiveRecord::Schema.define(version: 2018_10_27_111105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_10_09_074116) do
     t.datetime "updated_at", null: false
     t.bigint "developer_id"
     t.boolean "show_missing_info_clarification"
+    t.float "bonification"
     t.index ["developer_id"], name: "index_budgets_on_developer_id"
   end
 
@@ -51,6 +52,15 @@ ActiveRecord::Schema.define(version: 2018_10_09_074116) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hour_rates", force: :cascade do |t|
+    t.bigint "budget_id"
+    t.float "in_pesos"
+    t.float "in_dolars"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["budget_id"], name: "index_hour_rates_on_budget_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -63,5 +73,6 @@ ActiveRecord::Schema.define(version: 2018_10_09_074116) do
   add_foreign_key "budget_items", "budgets"
   add_foreign_key "budgets", "developers"
   add_foreign_key "clients", "budgets"
+  add_foreign_key "hour_rates", "budgets"
   add_foreign_key "projects", "budgets"
 end

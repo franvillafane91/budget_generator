@@ -1,6 +1,7 @@
 class Budget < ApplicationRecord
   has_one :client, dependent: :destroy
   has_one :project, dependent: :destroy
+  has_one :hour_rate, dependent: :destroy
 
   has_many :budget_items, dependent: :destroy, inverse_of: :budget
 
@@ -8,6 +9,7 @@ class Budget < ApplicationRecord
 
   accepts_nested_attributes_for :client, update_only: true
   accepts_nested_attributes_for :project, update_only: true
+  accepts_nested_attributes_for :hour_rate, update_only: true
   accepts_nested_attributes_for :budget_items, reject_if: :all_blank, allow_destroy: true
 
   delegate :name, to: :client, prefix: true
@@ -16,5 +18,4 @@ class Budget < ApplicationRecord
   delegate :description, to: :project, prefix: true
   delegate :name, to: :developer, prefix: true
   delegate :email, to: :developer, prefix: true
-
 end
