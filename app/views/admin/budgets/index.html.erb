@@ -2,9 +2,9 @@
 
 <div class="content overflow-hidden mb20">
   <% if @budgets.any? %>
-    <table>
+    <table class="table table-hover table-bordered table-condensed">
       <thead>
-        <tr>
+        <tr class='background-primary color-white'>
           <th class='text-center'><strong>Cliente</strong></th>
           <th class='text-center'><strong>Proyecto</strong></th>
           <th class='text-center'><strong>Total</strong></th>
@@ -20,9 +20,13 @@
             <td class='text-center'><%= budget.project_name %></td>
             <td class='text-center'><%= budget.total_amount %></td>
             <td class='text-center'><%= budget.bonification? ? 'Si' : 'No' %></td>
-            <td class='text-center'> <%= link_to "PDF", admin_budget_pdf_path(budget, format: :pdf), target: '_blank' %> |
-            <%= link_to 'Editar', edit_admin_budget_path(budget) %> |
-            <%= link_to 'Eliminar', admin_budget_path(budget), method: :delete, data: { confirm: 'Estás seguro?' } %></td>
+            <td class='text-center'>
+              <strong>
+                <%= link_to "PDF", admin_budget_pdf_path(budget, format: :pdf), target: '_blank' %> |
+                <%= link_to 'Editar', edit_admin_budget_path(budget) %> |
+                <%= link_to 'Eliminar', admin_budget_path(budget), method: :delete, data: { confirm: 'Estás seguro?' } %>
+              </strong>
+            </td>
           </tr>
         <% end %>
       </tbody>
