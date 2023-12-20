@@ -5,14 +5,17 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.5.9'
+
 # Rails
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 6.0.4'
 
 # Backend
 gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'psych'
 
 # Frontend
 gem 'sass-rails', '~> 5.0'
