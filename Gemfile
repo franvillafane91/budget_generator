@@ -26,7 +26,6 @@ gem 'font-awesome-rails'
 gem 'cocoon'
 
 # Configuration/Setup
-gem 'figaro'
 
 group :production do
   gem 'rails_12factor'
@@ -38,6 +37,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'dotenv-rails'
 end
 
 group :development do
