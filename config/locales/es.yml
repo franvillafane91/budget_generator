@@ -1,0 +1,35 @@
+es:
+  hello: "Hola mundo"
+
+  client_name: nombre del cliente
+  
+  client_email: Email
+  
+  project_name: Nombre del proyecto
+  
+  project_description: Descripcion del proyecto
+  
+  send_date: Enviar datos
+  
+  estimated_time: Timpo estimado
+  
+  total_amount: Cantidad total
+  
+  team_leader: Jefe de equipo
+  
+  hour_rate_in_pesos: Horas en pesos
+  
+  hour_rate_in_dolars: Horas en dolares
+  
+  bonification: Bonificacion
+  
+  show_missing_info_clarification: Aclaración de información faltante 
+  
+  budget_items: Items
+
+
+
+
+
+
+

@@ -14,12 +14,12 @@
   <div class="row">
     <%= form.fields_for :client do |cf| %>
       <div class="form-group col-md-6">
-        <%= cf.label :client_name %>
+        <%= cf.label t(:client_name) %>
         <%= cf.text_field :name, class: 'form-control' %>
       </div>
 
       <div class="form-group col-md-6">
-        <%= cf.label :client_email %>
+        <%= cf.label t(:client_email) %>
         <%= cf.text_field :email, class: 'form-control' %>
       </div>
     <% end %>
@@ -28,12 +28,12 @@
   <div class="row">
     <%= form.fields_for :project do |pf| %>
       <div class="form-group col-md-6">
-        <%= pf.label :project_name %>
+        <%= pf.label t(:project_name) %>
         <%= pf.text_field :name, class: 'form-control' %>
       </div>
 
       <div class="form-group col-md-6">
-        <%= pf.label :project_description %>
+        <%= pf.label t(:project_description) %>
         <%= pf.text_field :description, class: 'form-control' %>
       </div>
     <% end %>
@@ -41,24 +41,24 @@
 
   <div class="row">
     <div class="form-group col-md-6">
-      <%= form.label :send_date %>
+      <%= form.label t(:send_date) %>
       <%= form.text_field :send_date, class: 'form-control' %>
     </div>
 
     <div class="form-group col-md-6">
-      <%= form.label :estimated_time %>
+      <%= form.label t(:estimated_time) %>
       <%= form.text_field :estimated_time, class: 'form-control' %>
     </div>
   </div>
 
   <div class="row">
     <div class="form-group col-md-6">
-      <%= form.label :total_amount %>
+      <%= form.label t(:total_amount) %>
       <%= form.number_field :total_amount, class: 'form-control' %>
     </div>
 
     <div class="form-group col-md-6">
-      <%= form.label :team_leader %>
+      <%= form.label t(:team_leader) %>
       <%= form.select :developer_id, Developer.all.collect {|d| [ d.name, d.id ] }, { include_blank: '--Seleccionar--' }, class: 'form-control' %>
     </div>
   </div>
@@ -66,12 +66,12 @@
   <div class="row">
     <%= form.fields_for :hour_rate do |hr| %>
       <div class="form-group col-md-6">
-        <%= hr.label :hour_rate_in_pesos %>
+        <%= hr.label t(:hour_rate_in_pesos) %>
         <%= hr.number_field :in_pesos, class: 'form-control' %>
       </div>
 
       <div class="form-group col-md-6">
-        <%= hr.label :hour_rate_in_dolars %>
+        <%= hr.label t(:hour_rate_in_dolars) %>
         <%= hr.number_field :in_dolars, class: 'form-control' %>
       </div>
     <% end %>
@@ -79,12 +79,12 @@
 
   <div class="row">
     <div class="form-group col-md-6">
-      <%= form.label :bonification %>
+      <%= form.label t(:bonification) %>
       <%= form.number_field :bonification, class: 'form-control' %>
     </div>
 
     <div class="form-group col-md-6">
-      <%= form.label :show_missing_info_clarification %>
+      <%= form.label t(:show_missing_info_clarification) %>
       <%= form.check_box :show_missing_info_clarification, class: 'form-control' %>
     </div>
   </div>
@@ -92,7 +92,7 @@
   <div class="form-group">
     <div class="row">
       <div class="col-md-12">
-        <%= form.label :budget_items %>
+        <%= form.label t(:budget_items) %>
         <%= link_to_add_association 'Agregar Item', form, :budget_items, class: "btn btn-success links pull-right", data: {'association-insertion-method': 'append'} %>
 
         <%= form.fields_for :budget_items do |bi| %>
