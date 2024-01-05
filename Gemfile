@@ -16,6 +16,8 @@ gem 'puma', '~> 3.7'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'psych'
+gem 'devise'
+
 
 # Frontend
 gem 'sass-rails', '~> 5.0'

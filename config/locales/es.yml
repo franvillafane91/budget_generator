@@ -1,4 +1,8 @@
 es:
+  devise:
+    sessions:
+      developer:
+        signed_in: error mio
   hello: "Hola mundo"
 
   client_name: nombre del cliente
@@ -26,10 +30,4 @@ es:
   show_missing_info_clarification: Aclaración de información faltante 
   
   budget_items: Items
-
-
-
-
-
-
-
+  

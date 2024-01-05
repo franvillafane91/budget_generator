@@ -4,11 +4,12 @@
       <ul class="nav navbar-nav navbar-right user-nav">
         <li class="dropdown profile_menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <span>Admin</span>
+            <span>Hola <%= current_developer.email %></span>
             <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="">Nada para ver aqui ;)</a></li>
+            <li><a>
+            <%= link_to 'Cerrar sesión', destroy_developer_session_path, method: :delete, data: { turbo: :false } %></a></li>
           </ul>
         </li>
       </ul>
