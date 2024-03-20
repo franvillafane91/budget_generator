@@ -1,8 +1,4 @@
 es:
-  devise:
-    sessions:
-      developer:
-        signed_in: error mio
   hello: "Hola mundo"
 
   client_name: nombre del cliente
